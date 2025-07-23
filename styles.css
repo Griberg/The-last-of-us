@@ -1,34 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Suez+One|Share+Tech+Mono&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   outline: none;
+  box-sizing: border-box;
 }
 
 body, html {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
 }
 
 body {
-  background-color: #fafafa;
-  font-family: Trebuchet MS, Helvetica;
+  /* Грязная текстура, грубый стиль */
+  background: #1e1d1a url('https://www.transparenttextures.com/patterns/old-wall.png');
+  color: #e3c88a;
+  font-family: 'Share Tech Mono', 'Roboto Mono', monospace, Helvetica;
+  letter-spacing: 0.05em;
 }
-
-/* Шапка сайта */
 
 header {
   width: 100%;
   padding: 10px 0.5% 0px 0.5%;
-  background: transparent;
+  background: rgba(38,30,29,0.98);
   float: left;
   position: fixed;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.78), 0 1px 0px #997f53 inset;
+  border-bottom: 2px solid #775323;
+  z-index: 10000;
+  transition: background 0.3s;
 }
 
 header #logo {
-  color: #fff;
+  color: #dbc083;
   cursor: pointer;
+  text-shadow: 0 2px 10px #241c0d;
 }
 
 header #logo span {
@@ -36,6 +44,9 @@ header #logo span {
   line-height: 45px;
   margin-left: 40px;
   font-family: 'Suez One', serif;
+  letter-spacing: 0.06em;
+  color: #e7b755;
+  text-shadow: 0 1px 5px #432507;
 }
 
 @media (min-width: 701px) {
@@ -69,12 +80,20 @@ header #logo span {
   font-size: 1em;
   line-height: 40px;
   margin-bottom: 10px;
+  font-family: 'Roboto Mono', monospace;
 }
 
-#about > a {color: #fff}
+#about > a {
+  color: #e3c88a;
+  background: rgba(50,40,20,0.3);
+  border-radius: 3px;
+  padding: 3px 8px;
+  transition: background 0.3s, color 0.2s;
+}
 
 #about > a:hover {
-  color: #b0b0b0;
+  color: #ffb84c;
+  background: rgba(100, 70, 20, 0.5);
   text-decoration: underline;
 }
 
@@ -82,30 +101,32 @@ header #logo span {
   margin-right: 7%;
 }
 
-/* Стили для фиксированной шапки */
-
+/* Фиксированная шапка */
 .fixed {
   z-index: 5000;
-  background-color: #fff;
-  border-bottom: 1px solid silver;
+  background: #2b2420 url('https://www.transparenttextures.com/patterns/contour-line.png');
+  border-bottom: 2px solid #997f53;
+  box-shadow: 0 2px 16px #000b;
+  transition: background 0.3s;
 }
 
 header.fixed #logo {
-  color: #343434;
+  color: #ffce81;
 }
 
-.fixed #about a {color: #343434}
-.fixed #about a:hover {color: #7c7c7c}
+.fixed #about a {color: #ffce81}
+.fixed #about a:hover {color: #ffe06e}
 
-/* Главный блок на сайте */
-
+/* Главный блок */
 #top {
   width: 100%;
-  background:  linear-gradient(brown, orange);
+  background: linear-gradient(135deg, #2a1913 60%, #a86a1e 100%);
   background-blend-mode: multiply;
   background-size: cover;
   text-align: center;
-  color: #fff;
+  color: #e7cf92;
+  border-bottom: 8px solid #806015;
+  box-shadow: 0 6px 40px #281f13 inset;
 }
 
 @media (min-width: 1001px) {
@@ -138,20 +159,24 @@ header.fixed #logo {
 
 #top h1 {
   padding-top: 20%;
+  color: #ffce81;
+  text-shadow: 2px 2px 8px #55420f;
+  letter-spacing: 0.08em;
 }
 
 #top h3 {
-  color: #ccc;
+  color: #b4a16d;
+  text-shadow: 1px 1px 8px #161308;
 }
 
-/* Блок с возможностями */
-
+/* Возможности */
 #main {
   float: left;
-  background-color: #f6f6f6;
-  border-top: 2px solid silver;
-  color: #484848;
+  background: linear-gradient(120deg, #292726 80%, #766136 100%);
+  border-top: 3px solid #88653b;
+  color: #dab170;
   font-size: 1.3em;
+  box-shadow: 0 4px 30px #140d05 inset;
 }
 
 @media (min-width: 1401px) {
@@ -179,30 +204,44 @@ header.fixed #logo {
   width: 48%;
   margin-right: 2%;
   float: left;
+  border-left: 4px solid #523919;
+  padding-left: 12px;
+  box-shadow: 2px 6px 26px #110b07 inset,0 3px 18px rgba(80,60,15,0.04);
+  background: rgba(49,35,16,0.21);
 }
 
-#main h2 {font-size: 3em}
-#main span {color: #a0a0a0}
+#main h2 {
+  font-size: 3em;
+  color: #e8a53a;
+  text-shadow: 1px 1px 10px #715a20;
+}
+#main span {
+  color: #b6a576;
+}
 
-/* Блок с преимуществами */
-
+/* Преимущества */
 #overview {
   float: left;
-  background: conic-gradient(brown, orange);
-
+  background: repeating-linear-gradient(135deg, #2e2218 0px, #401b10 30px, #793e0e 70px, #30241a 100px),
+              url('https://www.transparenttextures.com/patterns/asfalt-light.png');
   background-blend-mode: multiply;
-  background-color: #403f40;
   background-size: cover;
   background-attachment: fixed;
-
   padding: 100px 0;
   width: 100%;
   text-align: center;
-  color: #fff;
+  color: #e4cc96;
 }
 
-#overview h2 {font-size: 4em}
-#overview h4 {color: #ccc; font-size: 1.5em}
+#overview h2 {
+  font-size: 4em;
+  color: #ffcb72;
+  text-shadow: 2px 2px 12px #2e2410;
+}
+#overview h4 {
+  color: #a48f6f; 
+  font-size: 1.5em;
+}
 
 @media (min-width: 561px) {
   #overview h2 {font-size: 4em}
@@ -217,6 +256,10 @@ header.fixed #logo {
   width: 30%;
   margin-right: 5%;
   margin-top: 50px;
+  background: rgba(66,48,30,0.18);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px #21180c;
+  padding: 8px;
 }
 
 #overview .img:nth-child(odd) {
@@ -224,13 +267,14 @@ header.fixed #logo {
 }
 
 #overview img {
-  background: #fafafa;
-  padding: 5px;
-  border: 1px solid silver;
+  background: #4a3a24;
+  padding: 7px;
+  border: 2px solid #97773d;
   float: left;
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
+  filter: grayscale(0.3) contrast(1.2) brightness(0.92) sepia(0.4);
 }
 
 #overview span {
@@ -238,6 +282,8 @@ header.fixed #logo {
   width: 100%;
   font-size: 2em;
   margin-top: 10px;
+  color: #ffb045;
+  text-shadow: 0 0 7px #392c17;
 }
 
 @media (max-width: 700px) {
@@ -248,26 +294,35 @@ header.fixed #logo {
   }
 }
 
-/* Блок с контактами */
+/* Контакты */
 #contacts {
   width: 100%;
   float: left;
   padding-bottom: 40px;
   padding-top: 70px;
-  border-top: 4px solid #ccc;
-  background: #f4f4f4;
+  border-top: 4px solid #634618;
+  background: #292316 url('https://www.transparenttextures.com/patterns/whitediamond.png');
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Roboto Slab', serif;
-  font-weight: lighter;
+  font-family: 'Suez One', 'Roboto Mono', serif;
+  font-weight: normal;
+  letter-spacing: 0.06em;
 }
 
-#contacts h5 {font-size: 3em; color: #4f4f4f}
+#contacts h5 {
+  font-size: 3em; 
+  color: #e6bc6a;
+}
 
 #form_input {
   margin-top: 15px;
   font-size: 1.1em;
+  background: rgba(67,54,36,0.19);
+  border-radius: 8px;
+  box-shadow: 0 8px 30px #241a12 inset;
+  border: 1px dashed #73562e;
+  padding: 18px;
 }
 
 @media (min-width: 1051px) {
@@ -285,14 +340,14 @@ h1, h2, h3, h4, h5 {
 }
 
 #form_input label {
-  color: #505050;
+  color: #d3b586;
   cursor: pointer;
   font-size: 1.4em;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Mono', 'Suez One', serif;
 }
 
 #form_input label > span {
-  color: #e87e7e;
+  color: #c56b3b;
 }
 
 #form_input input,#form_input textarea {
@@ -300,40 +355,47 @@ h1, h2, h3, h4, h5 {
   width: 70%;
   padding: 10px 2%;
   border-radius: 7px;
-  border: 2px solid silver;
+  border: 2px solid #7f6437;
   font-size: 0.9em;
-  color: #4a4a4a;
+  color: #efb054;
+  background: #24211b;
+  transition: border-color 0.2s, background 0.2s;
 }
 
 #form_input input:focus, #form_input textarea:focus {
-  border-color: #333;
+  border-color: #d1ad69;
+  background: #1a180f;
 }
 
 .btn {
   float: left;
   border-radius: 5px;
-  padding: 5px 9px;
+  padding: 5px 14px;
   font-size: 1.2em;
-  background-color: #ec6550;
-  text-shadow: #454545 0 0 2px;
+  background-color: #b85919;
+  border: 1px solid #634618;
+  text-shadow: #323232 0 0 1px;
   cursor: pointer;
-  color: white;
-  font-family: 'Roboto Slab', serif;
+  color: #ffebbb;
+  font-family: 'Suez One', serif;
+  letter-spacing: 0.08em;
+  box-shadow: 0 2px 12px #1e120b inset, 0 1px 1px #8e6d3b;
+  transition: background 0.18s;
 }
 
 .btn:hover {
-  background-color: #c15443;
+  background-color: #8a4512;
 }
 
 /* Вопросы и ответы */
-
 #faq {
-  background-color: #fff;
-  border-top: 2px dashed #e4e3e3;
+  background: #24211d url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  border-top: 2px dashed #6d5643;
   width: 100%;
   float: left;
   padding-top: 70px;
   padding-bottom: 70px;
+  color: #e5dbb5;
 }
 
 @media (min-width: 801px) {
@@ -353,43 +415,64 @@ h1, h2, h3, h4, h5 {
 }
 
 #faq .title {
-  font-weight: lighter;
-  color: #a3a0ad;
+  font-weight: normal;
+  color: #ac9277;
   margin-bottom: 20px;
   font-size: 2.2em;
+  text-shadow: 1px 2px 14px #3b1c05;
 }
 
 #faq .heading {
-  color: #7d7d7d;
+  color: #e89c4f;
   font-size: 1.3em;
   font-weight: bold;
+  letter-spacing: 0.03em;
 }
 
 #faq p {
-  font-family: Arimo, Helvetica, sans-serif;
+  font-family: 'Roboto Mono', 'Arimo', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: 4a4a4a;
+  color: #e0d4b4;
   font-size: 0.95em;
   margin-bottom: 40px;
+  text-shadow: 0 1px 8px #33280e;
 }
 
-#comments{
+/* Комментарии/отзывы */
+#comments {
   display: inline-block;
   height: fit-content;
   margin-bottom: 20px;
+  border-left: 5px solid #a77f3c;
+  background: rgba(60,50,29,0.10);
+  box-shadow: 2px 1px 10px #211a09 inset;
+  padding-left: 14px;
 }
 
+/* Таблицы */
 table {
-   border: 1px solid grey;
-   width: 513px;
+  border: 2px solid #7d5822;
+  width: 513px;
+  background: #241d14;
+  color: #e6c58e;
+  box-shadow: 0 2px 12px #402906;
 }
 /* границы ячеек первого ряда таблицы */
 th {
   width: 200px;
-   border: 1px solid grey;
+  border: 1.5px solid #a96710;
+  background: #4b3717;
+  color: #ffd376;
+  padding: 7px 0;
+  font-size: 1.05em;
+  letter-spacing: 0.02em;
 }
 /* границы ячеек тела таблицы */
 td {
   width: 200px;
-   border: 1px solid grey;
+  border: 1.5px solid #7d5822;
+  background: #272014;
+  color: #e0c488;
+  padding: 5px 0;
+  letter-spacing: 0.01em;
 }
