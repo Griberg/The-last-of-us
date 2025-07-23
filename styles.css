@@ -227,28 +227,26 @@ header.fixed #logo {
   background-blend-mode: multiply;
   background-size: cover;
   background-attachment: fixed;
-  padding: 100px 0;
-  width: 100%;
-  text-align: center;
+  padding: 100px 10%;        /* Добавлены боковые отступы для адаптивности */
+  max-width: 1200px;         /* Ограничение максимальной ширины */
+  margin: 0 auto;            /* Центрируем контейнер */
   color: #e4cc96;
+  text-align: center;
+  box-sizing: border-box;    /* Учитываем паддинги и бордеры в ширине */
+  overflow: hidden;          /* Чтобы контролировать float внутри */
 }
 
 #overview h2 {
   font-size: 4em;
   color: #ffcb72;
   text-shadow: 2px 2px 12px #2e2410;
+  margin-bottom: 20px;
 }
+
 #overview h4 {
-  color: #a48f6f; 
+  color: #a48f6f;
   font-size: 1.5em;
-}
-
-@media (min-width: 561px) {
-  #overview h2 {font-size: 4em}
-}
-
-@media (max-width: 560px) {
-  #overview h2 {font-size: 2em}
+  margin-bottom: 40px;
 }
 
 #overview .img {
@@ -260,6 +258,8 @@ header.fixed #logo {
   border-radius: 14px;
   box-shadow: 0 6px 24px #21180c;
   padding: 8px;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
 }
 
 #overview .img:nth-child(odd) {
@@ -270,11 +270,11 @@ header.fixed #logo {
   background: #4a3a24;
   padding: 7px;
   border: 2px solid #97773d;
-  float: left;
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
   filter: grayscale(0.3) contrast(1.2) brightness(0.92) sepia(0.4);
+  display: block;
 }
 
 #overview span {
@@ -286,13 +286,53 @@ header.fixed #logo {
   text-shadow: 0 0 7px #392c17;
 }
 
-@media (max-width: 700px) {
+/* Адаптивные стили */
+
+@media (max-width: 1100px) {
+  #overview {
+    padding: 50px 5%;
+  }
   #overview .img {
-    width: 80%!important;
-    margin-right: 0!important;
-    margin-left: 10%!important;
+    width: 45%;
+    margin-left: 0;
+    margin-right: 5%;
   }
 }
+
+@media (max-width: 700px) {
+  #overview {
+    padding: 40px 4%;
+  }
+  #overview h2 {
+    font-size: 2.5em;
+  }
+  #overview h4 {
+    font-size: 1.2em;
+  }
+  #overview .img {
+    float: none;
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block;
+  }
+  #overview span {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 400px) {
+  #overview h2 {
+    font-size: 1.8em;
+  }
+  #overview h4 {
+    font-size: 1em;
+  }
+  #overview span {
+    font-size: 1.2em;
+  }
+}
+
 
 /* Контакты */
 #contacts {
