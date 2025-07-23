@@ -1,4 +1,4 @@
-const GHPATH = '/brainInvader';
+const GHPATH = '/Griberg';
 
 // Add a new version here if you updated your files so
 // the last version will be used
