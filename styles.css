@@ -1,446 +1,395 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Suez+One|Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
 
 * {
   margin: 0;
   padding: 0;
   outline: none;
-  box-sizing: border-box;
 }
 
 body, html {
   width: 100%;
-  min-height: 100vh;
-  font-size: 16px;
-  scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  background: #1e1d1a url('https://www.transparenttextures.com/patterns/old-wall.png');
-  color: #e3c88a;
-  font-family: 'Share Tech Mono', 'Roboto Mono', monospace;
-  letter-spacing: 0.05em;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
+  background-color: #fafafa;
+  font-family: Trebuchet MS, Helvetica;
 }
 
-/* Header */
+/* Шапка сайта */
+
 header {
   width: 100%;
-  padding: 15px 5%;
-  background: rgba(38,30,29,0.98);
+  padding: 10px 0.5% 0px 0.5%;
+  background: transparent;
+  float: left;
   position: fixed;
-  box-shadow: 0 3px 14px rgba(0,0,0,0.78), 0 1px 0px #997f53 inset;
-  border-bottom: 2px solid #775323;
-  z-index: 10000;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
 }
 
 header #logo {
-  color: #dbc083;
+  color: #fff;
   cursor: pointer;
-  text-shadow: 0 2px 10px #241c0d;
-  flex: 1;
-  min-width: 200px;
 }
 
 header #logo span {
   font-size: 1.7em;
-  line-height: 1.3;
+  line-height: 45px;
+  margin-left: 40px;
   font-family: 'Suez One', serif;
-  letter-spacing: 0.06em;
-  color: #e7b755;
-  text-shadow: 0 1px 5px #432507;
+}
+
+@media (min-width: 701px) {
+  #logo {
+    float: left;
+    width: 30%;
+    font-size: 1.1em;
+  }
+
+  #about {
+    float: right;
+    width: 67%;
+  }
+}
+
+@media (max-width: 700px) {
+  #logo {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 1.5em;
+  }
+
+  #about {
+    float: left;
+    width: 100%;
+  }
 }
 
 #about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-#about > a {
-  color: #e3c88a;
-  background: rgba(50,40,20,0.3);
-  border-radius: 3px;
-  padding: 8px 15px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-#about > a:hover {
-  color: #ffb84c;
-  background: rgba(100, 70, 20, 0.5);
-  text-decoration: underline;
-}
-
-/* Fixed header */
-.fixed {
-  background: #2b2420 url('https://www.transparenttextures.com/patterns/contour-line.png');
-  border-bottom: 2px solid #997f53;
-  box-shadow: 0 2px 16px #000b;
-  padding: 10px 5%;
-}
-
-.fixed #logo span {
-  color: #ffce81;
-}
-
-.fixed #about a {
-  color: #ffce81;
-  padding: 6px 12px;
-}
-
-.fixed #about a:hover {
-  color: #ffe06e;
-}
-
-/* Main sections */
-section {
-  width: 100%;
-  padding: 100px 5%;
-  margin-top: 0;
-}
-
-/* Hero section */
-#top {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #2a1913 60%, #a86a1e 100%);
-  border-bottom: 8px solid #806015;
-  box-shadow: 0 6px 40px #281f13 inset;
-  padding-top: 80px;
-}
-
-#top h1 {
-  color: #ffce81;
-  text-shadow: 2px 2px 8px #55420f;
-  letter-spacing: 0.08em;
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 20px;
-}
-
-#top h3 {
-  color: #b4a16d;
-  text-shadow: 1px 1px 8px #161308;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  max-width: 800px;
-  padding: 0 5%;
-}
-
-/* Main content */
-#main {
-  background: linear-gradient(120deg, #292726 80%, #766136 100%);
-  border-top: 3px solid #88653b;
-  color: #dab170;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-}
-
-#main div {
-  border-left: 4px solid #523919;
-  padding: 20px;
-  box-shadow: 2px 6px 26px #110b07 inset, 0 3px 18px rgba(80,60,15,0.04);
-  background: rgba(49,35,16,0.21);
-}
-
-#main h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #e8a53a;
-  text-shadow: 1px 1px 10px #715a20;
-  margin-bottom: 20px;
-}
-
-#main span {
-  color: #b6a576;
-}
-
-/* Overview */
-#overview {
-  background: repeating-linear-gradient(135deg, #2e2218 0px, #401b10 30px, #793e0e 70px, #30241a 100px),
-              url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-  background-blend-mode: multiply;
-  background-attachment: fixed;
-  color: #e4cc96;
-  text-align: center;
-}
-
-#overview h2 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  color: #ffcb72;
-  text-shadow: 2px 2px 12px #2e2410;
-  margin-bottom: 20px;
-}
-
-#overview h4 {
-  color: #a48f6f;
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: 40px;
-}
-
-.overview-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.img {
-  background: rgba(66,48,30,0.18);
-  border-radius: 14px;
-  box-shadow: 0 6px 24px #21180c;
-  padding: 15px;
-  transition: transform 0.3s ease;
-}
-
-.img:hover {
-  transform: translateY(-10px);
-}
-
-.img img {
-  background: #4a3a24;
-  padding: 7px;
-  border: 2px solid #97773d;
-  width: 100%;
-  border-radius: 20px;
-  filter: grayscale(0.3) contrast(1.2) brightness(0.92) sepia(0.4);
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
-
-.img span {
-  display: block;
-  font-size: clamp(1.2rem, 2vw, 2rem);
-  margin-top: 15px;
-  color: #ffb045;
-  text-shadow: 0 0 7px #392c17;
-}
-
-/* Contacts */
-#contacts {
-  border-top: 4px solid #634618;
-  background: #292316 url('https://www.transparenttextures.com/patterns/whitediamond.png');
-  text-align: center;
-}
-
-h1, h2, h3, h4, h5 {
-  font-family: 'Suez One', 'Roboto Mono', serif;
-  font-weight: normal;
-  letter-spacing: 0.06em;
-}
-
-#contacts h5 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #e6bc6a;
-  margin-bottom: 30px;
-}
-
-#form_input {
-  background: rgba(67,54,36,0.19);
-  border-radius: 8px;
-  box-shadow: 0 8px 30px #241a12 inset;
-  border: 1px dashed #73562e;
-  padding: 25px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#form_input label {
-  color: #d3b586;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-family: 'Roboto Mono', 'Suez One', serif;
-  display: block;
-  text-align: left;
-  margin-bottom: 5px;
-}
-
-#form_input label > span {
-  color: #c56b3b;
-}
-
-#form_input input,
-#form_input textarea {
-  margin-bottom: 20px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 7px;
-  border: 2px solid #7f6437;
-  font-size: 1rem;
-  color: #efb054;
-  background: #24211b;
-  transition: all 0.3s ease;
-}
-
-#form_input textarea {
-  min-height: 150px;
-  resize: vertical;
-}
-
-#form_input input:focus,
-#form_input textarea:focus {
-  border-color: #d1ad69;
-  background: #1a180f;
-  outline: none;
-}
-
-.btn {
-  border-radius: 5px;
-  padding: 12px 25px;
-  font-size: 1.2rem;
-  background-color: #b85919;
-  border: 1px solid #634618;
-  text-shadow: #323232 0 0 1px;
-  cursor: pointer;
-  color: #ffebbb;
-  font-family: 'Suez One', serif;
-  letter-spacing: 0.08em;
-  box-shadow: 0 2px 12px #1e120b inset, 0 1px 1px #8e6d3b;
-  transition: all 0.3s ease;
-  display: inline-block;
-  margin-top: 10px;
-}
-
-.btn:hover {
-  background-color: #8a4512;
-  transform: translateY(-2px);
-}
-
-/* FAQ */
-#faq {
-  background: #24211d url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
-  border-top: 2px dashed #6d5643;
-  color: #e5dbb5;
-}
-
-.faq-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-#faq .title {
-  font-weight: normal;
-  color: #ac9277;
-  margin-bottom: 20px;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
-  text-shadow: 1px 2px 14px #3b1c05;
-  grid-column: 1 / -1;
-}
-
-#faq .heading {
-  color: #e89c4f;
-  font-size: 1.3rem;
-  font-weight: bold;
-  letter-spacing: 0.03em;
+  font-size: 1em;
+  line-height: 40px;
   margin-bottom: 10px;
 }
 
-#faq p {
-  font-family: 'Roboto Mono', Helvetica, sans-serif;
-  color: #e0d4b4;
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 8px #33280e;
+#about > a {color: #fff}
+
+#about > a:hover {
+  color: #b0b0b0;
+  text-decoration: underline;
 }
 
-/* Comments */
-#comments {
-  display: block;
-  margin: 30px 0;
-  border-left: 5px solid #a77f3c;
-  background: rgba(60,50,29,0.10);
-  box-shadow: 2px 1px 10px #211a09 inset;
-  padding: 20px;
+#about > a:not(:last-child) {
+  margin-right: 7%;
 }
 
-/* Tables */
-table {
-  border: 2px solid #7d5822;
+/* Стили для фиксированной шапки */
+
+.fixed {
+  z-index: 5000;
+  background-color: #fff;
+  border-bottom: 1px solid silver;
+}
+
+header.fixed #logo {
+  color: #343434;
+}
+
+.fixed #about a {color: #343434}
+.fixed #about a:hover {color: #7c7c7c}
+
+/* Главный блок на сайте */
+
+#top {
   width: 100%;
-  max-width: 600px;
-  background: #241d14;
-  color: #e6c58e;
-  box-shadow: 0 2px 12px #402906;
-  margin: 20px auto;
-  border-collapse: collapse;
-  overflow-x: auto;
-  display: block;
+  background:  linear-gradient(brown, orange);
+  background-blend-mode: multiply;
+  background-size: cover;
+  text-align: center;
+  color: #fff;
 }
 
-th {
-  border: 1.5px solid #a96710;
-  background: #4b3717;
-  color: #ffd376;
-  padding: 12px;
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-}
-
-td {
-  border: 1.5px solid #7d5822;
-  background: #272014;
-  color: #e0c488;
-  padding: 10px;
-  letter-spacing: 0.01em;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 15px;
-  }
-  
-  #logo {
-    margin-bottom: 15px;
-  }
-  
-  #about {
-    width: 100%;
-    justify-content: center;
-  }
-  
-  section {
-    padding: 80px 20px;
-  }
-  
-  .overview-container,
-  .faq-container {
-    grid-template-columns: 1fr;
-  }
-  
-  .img {
-    max-width: 400px;
-    margin: 0 auto;
+@media (min-width: 1001px) {
+  #top {
+    font-size: 3em;
+    height: 1000px;
   }
 }
 
-@media (max-width: 480px) {
-  #about > a {
-    padding: 6px 10px;
-    font-size: 0.9rem;
+@media (max-width: 1000px) and (min-width: 651px) {
+  #top {
+    font-size: 2em;
+    height: 600px;
   }
-  
+}
+
+@media (max-width: 650px) {
+  #top {
+    font-size: 1.3em;
+    padding-top: 50%;
+    height: 500px;
+  }
+}
+
+@media (max-width: 450px) {
+  #top {
+    font-size: 0.9em;
+  }
+}
+
+#top h1 {
+  padding-top: 20%;
+}
+
+#top h3 {
+  color: #ccc;
+}
+
+/* Блок с возможностями */
+
+#main {
+  float: left;
+  background-color: #f6f6f6;
+  border-top: 2px solid silver;
+  color: #484848;
+  font-size: 1.3em;
+}
+
+@media (min-width: 1401px) {
+  #main {
+    padding: 100px 20%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 1400px) {
+  #main {
+    padding: 100px 10%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  #main div {
+    width: 98%!important;
+    margin-bottom: 20px;
+  }
+}
+
+#main div {
+  width: 48%;
+  margin-right: 2%;
+  float: left;
+}
+
+#main h2 {font-size: 3em}
+#main span {color: #a0a0a0}
+
+/* Блок с преимуществами */
+
+#overview {
+  float: left;
+  background: conic-gradient(brown, orange);
+
+  background-blend-mode: multiply;
+  background-color: #403f40;
+  background-size: cover;
+  background-attachment: fixed;
+
+  padding: 100px 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+}
+
+#overview h2 {font-size: 4em}
+#overview h4 {color: #ccc; font-size: 1.5em}
+
+@media (min-width: 561px) {
+  #overview h2 {font-size: 4em}
+}
+
+@media (max-width: 560px) {
+  #overview h2 {font-size: 2em}
+}
+
+#overview .img {
+  float: left;
+  width: 30%;
+  margin-right: 5%;
+  margin-top: 50px;
+}
+
+#overview .img:nth-child(odd) {
+  margin-left: 18%;
+}
+
+#overview img {
+  background: #fafafa;
+  padding: 5px;
+  border: 1px solid silver;
+  float: left;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+#overview span {
+  float: left;
+  width: 100%;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+  #overview .img {
+    width: 80%!important;
+    margin-right: 0!important;
+    margin-left: 10%!important;
+  }
+}
+
+/* Блок с контактами */
+#contacts {
+  width: 100%;
+  float: left;
+  padding-bottom: 40px;
+  padding-top: 70px;
+  border-top: 4px solid #ccc;
+  background: #f4f4f4;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+}
+
+#contacts h5 {font-size: 3em; color: #4f4f4f}
+
+#form_input {
+  margin-top: 15px;
+  font-size: 1.1em;
+}
+
+@media (min-width: 1051px) {
   #form_input {
-    padding: 15px;
+    width: 35%;
+    margin-left: 38%;
   }
-  
-  .btn {
-    width: 100%;
+}
+
+@media (max-width: 1050px) {
+  #form_input {
+    width: 90%;
+    margin-left: 10%;
   }
+}
+
+#form_input label {
+  color: #505050;
+  cursor: pointer;
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_input label > span {
+  color: #e87e7e;
+}
+
+#form_input input,#form_input textarea {
+  margin-bottom: 10px;
+  width: 70%;
+  padding: 10px 2%;
+  border-radius: 7px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+#form_input input:focus, #form_input textarea:focus {
+  border-color: #333;
+}
+
+.btn {
+  float: left;
+  border-radius: 5px;
+  padding: 5px 9px;
+  font-size: 1.2em;
+  background-color: #ec6550;
+  text-shadow: #454545 0 0 2px;
+  cursor: pointer;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+}
+
+.btn:hover {
+  background-color: #c15443;
+}
+
+/* Вопросы и ответы */
+
+#faq {
+  background-color: #fff;
+  border-top: 2px dashed #e4e3e3;
+  width: 100%;
+  float: left;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+@media (min-width: 801px) {
+  #faq div {
+    width: 25%;
+    margin-left: 6%;
+    float: left;
+  }
+}
+
+@media (max-width: 800px) {
+  #faq div {
+    width: 80%;
+    margin-left: 10%;
+    float: left;
+  }
+}
+
+#faq .title {
+  font-weight: lighter;
+  color: #a3a0ad;
+  margin-bottom: 20px;
+  font-size: 2.2em;
+}
+
+#faq .heading {
+  color: #7d7d7d;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+#faq p {
+  font-family: Arimo, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: 4a4a4a;
+  font-size: 0.95em;
+  margin-bottom: 40px;
+}
+
+#comments{
+  display: inline-block;
+  height: fit-content;
+  margin-bottom: 20px;
+}
+
+table {
+   border: 1px solid grey;
+   width: 513px;
+}
+/* границы ячеек первого ряда таблицы */
+th {
+  width: 200px;
+   border: 1px solid grey;
+}
+/* границы ячеек тела таблицы */
+td {
+  width: 200px;
+   border: 1px solid grey;
 }
