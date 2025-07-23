@@ -82,6 +82,13 @@
       else
         $("header").attr("class", "fixed");
     });
+
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register(
+                '/The-last-of-us/sw.js',
+                {scope: '/The-last-of-us/'}
+            )
+        }
   </script>
 	
 </body>
